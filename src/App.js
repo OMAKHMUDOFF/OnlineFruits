@@ -8,6 +8,7 @@ import { Nav } from "./components/Nav";
 import { Rec } from "./components/Rec";
 import { Top } from "./components/Top";
 import "./style/style.css";
+import { Cart } from "./components/Cart";
 
 // import redapple from "./img/top/redapple.png";
 // import capsicum from "./img/top/capsicum.png";
@@ -69,6 +70,7 @@ function App() {
   return (
     <>
       <div className="container">
+        <Cart cart={cart} setCart={setCart} />
         <Nav />
         <Head />
         <Categor />

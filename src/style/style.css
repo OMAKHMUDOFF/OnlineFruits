@@ -4,9 +4,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
+}
+
+li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
   border: none;
+  outline: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+table img{
+  width: 100px;
 }
 
 :root {

@@ -5,7 +5,7 @@ import nuts from "../img/rec/nuts.png";
 import brokoli from "../img/rec/brokoli.png";
 import quince from "../img/rec/quince.png";
 
-export function Rec() {
+export function Rec({ cartBtn }) {
   function plus(obj) {
     setState(
       state.map((item) => {
@@ -136,7 +136,7 @@ export function Rec() {
                     <button onClick={() => plus(elem)}>+</button>
                   </div>
                   <div className="r-cart">
-                    <button>
+                    <button onClick={() => cartBtn(elem)}>
                       <i className="fa-solid fa-cart-arrow-down"></i>
                     </button>
                   </div>
