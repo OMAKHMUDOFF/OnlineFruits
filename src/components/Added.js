@@ -6,7 +6,7 @@ import strawberry from "../img/added/strawberry.png";
 import eggplant from "../img/added/eggplant.png";
 import egg from "../img/added/egg.png";
 
-export function Added() {
+export function Added({ cartBtn }) {
   let [state, setState] = useState([
     {
       id: 11,
@@ -138,7 +138,7 @@ export function Added() {
                     <button onClick={() => plus(elem)}>+</button>
                   </div>
                   <div className="r-cart">
-                    <button>
+                    <button onClick={() => cartBtn(elem)}>
                       <i className="fa-solid fa-cart-arrow-down"></i>
                     </button>
                   </div>

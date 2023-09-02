@@ -1,4 +1,4 @@
-export function Cart({ cart, setCart }) {
+export function Cart({ cart }) {
   return (
     <>
       <div className="cart">
@@ -29,7 +29,9 @@ export function Cart({ cart, setCart }) {
                     <th>{elem?.disc}</th>
                     <th>
                       {elem?.num *
-                        (elem?.price - (elem?.price / 100) * elem?.disc)}
+                        parseInt(
+                          elem?.price - (elem?.price / 100) * elem?.disc
+                        )}
                     </th>
                   </tr>
                 );

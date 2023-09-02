@@ -6,7 +6,7 @@ import pear from "../img/top/pear.png";
 import blueberry from "../img/top/blueberry.png";
 import raspberry from "../img/top/raspberry.png";
 
-export function Top() {
+export function Top({ cartBtn }) {
   let [state, setState] = useState([
     {
       id: 6,
@@ -138,7 +138,7 @@ export function Top() {
                     <button onClick={() => plus(elem)}>+</button>
                   </div>
                   <div className="r-cart">
-                    <button>
+                    <button onClick={() => cartBtn(elem)}>
                       <i className="fa-solid fa-cart-arrow-down"></i>
                     </button>
                   </div>
