@@ -73,27 +73,30 @@ function App() {
         <Head />
         <Categor />
         <Rec
-        // like={like}
-        // minus={minus}
-        // plus={plus}
-        // state={state}
-        // stateRec={state.rec}
-        // setState={setState}
+          // like={like}
+          // minus={minus}
+          // plus={plus}
+          // state={state}
+          // stateRec={state.rec}
+          // setState={setState}
+          cartBtn={cartWin}
         />
         <Best />
         <Top
-        // like={like}
-        // minus={minus}
-        // plus={plus}
-        // stateTop={state.top}
-        // setState={setState}
+          // like={like}
+          // minus={minus}
+          // plus={plus}
+          // stateTop={state.top}
+          // setState={setState}
+          cartBtn={cartWin}
         />
         <Added
-        // like={like}
-        // minus={minus}
-        // plus={plus}
-        // stateAdd={state.added}
-        // setState={setState}
+          // like={like}
+          // minus={minus}
+          // plus={plus}
+          // stateAdd={state.added}
+          // setState={setState}
+          cartBtn={cartWin}
         />
         <Footer />
       </div>
