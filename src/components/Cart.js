@@ -1,7 +1,13 @@
-export function Cart({ cart }) {
+export function Cart({ cart, active, closeTable }) {
   return (
     <>
-      <div className="cart">
+      <div className={active ? "cart active" : "cart"}>
+        <button
+          onClick={closeTable}
+          className={active ? "closeBtn active" : "closeBtn"}
+        >
+          X
+        </button>
         <table border={1}>
           <thead>
             <tr>

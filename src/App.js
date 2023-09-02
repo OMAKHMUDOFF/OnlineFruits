@@ -8,7 +8,7 @@ import { Nav } from "./components/Nav";
 import { Rec } from "./components/Rec";
 import { Top } from "./components/Top";
 import "./style/style.css";
-// import { Cart } from "./components/Cart";
+import { Cart } from "./components/Cart";
 
 // import redapple from "./img/top/redapple.png";
 // import capsicum from "./img/top/capsicum.png";
@@ -67,11 +67,25 @@ function App() {
     }
   }
 
+  let [active, setActive] = useState(false);
+
+  function activeBtn() {
+    setActive(!active);
+  }
+  function closeBtn() {
+    setActive(!active);
+  }
+
   return (
     <>
       <div className="container">
-        {/* <Cart cart={cart} setCart={setCart} /> */}
-        <Nav cart={cart} />
+        <Cart
+          cart={cart}
+          setCart={setCart}
+          active={active}
+          closeTable={closeBtn}
+        />
+        <Nav cart={cart} activeBtn={activeBtn} />
         <Head />
         <Categor />
         <Rec

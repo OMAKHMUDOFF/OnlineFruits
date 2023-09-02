@@ -1,11 +1,6 @@
 import logo from "../img/logo/logo.png";
-import { Cart } from "./Cart";
 
-export function Nav({ cart }) {
-  function cartOpen() {
-    <Cart cart={cart} />;
-  }
-
+export function Nav({ cart, activeBtn }) {
   return (
     <>
       <nav>
@@ -92,13 +87,13 @@ export function Nav({ cart }) {
               </div>
             </div>
             <div className="rightBot">
-              <div className="inCart">
+              <button className="inCart" onClick={activeBtn}>
                 <i className="fa-solid fa-cart-shopping"></i>
-                <p onClick={() => cartOpen()}>
+                <p>
                   Cart <span>{cart.length}</span>
                 </p>
                 <i className="fa-solid fa-caret-down"></i>
-              </div>
+              </button>
             </div>
           </div>
         </div>
