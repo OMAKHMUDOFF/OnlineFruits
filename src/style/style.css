@@ -744,6 +744,7 @@ footer {
 }
 
 table {
+  font-family: Open Sans;
   background: #ccccccd1;
   width: 100%;
   margin: 0 auto;
@@ -802,4 +803,7 @@ table img {
   background: none;
   font-size: 20px;
   color: red;
+}
+td.imgTab {
+  background: #fff;
 }

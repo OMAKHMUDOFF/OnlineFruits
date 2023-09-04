@@ -34,7 +34,7 @@ export function Cart({ cart, active, closeTable, setCart }) {
                 return (
                   <tr key={elem.id}>
                     <th>{i + 1}</th>
-                    <td>
+                    <td className="imgTab">
                       <img src={elem?.img} alt="product img" />
                     </td>
                     <td>{elem?.title}</td>
