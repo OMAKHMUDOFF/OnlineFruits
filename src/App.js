@@ -38,6 +38,23 @@ function App() {
   //   );
   // }
 
+  // function switchBtns(e, obj) {
+  //   switch (e.target.name) {
+  //     case "plus":
+  //       setState(
+  //         state.map((item) => {
+  //           return item.id === obj.id ? { ...item, num: item.num + 1 } : item;
+  //         })
+  //       );
+  //     case "minus":
+  //       setState(
+  //         state.map((item) => {
+  //           return item.id === obj.id ? { ...item, num: item.num - 1 } : item;
+  //         })
+  //       );
+  //   }
+  // }
+
   // function minus(obj) {
   //   if (obj.num > 1) {
   //     setState(
