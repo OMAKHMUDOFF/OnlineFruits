@@ -176,6 +176,7 @@ button {
 }
 
 .rightMid .liked {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,7 +440,7 @@ del {
   padding: 20px 20px;
   border: 0.5px solid rgba(42, 42, 42, 0.15);
   background: #fff;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .disc-like {
@@ -807,6 +808,7 @@ table img {
   height: 20px;
   border-radius: 50px;
   background: none;
+  transition: 0.4s;
 }
 
 .closeBtn {
@@ -820,4 +822,82 @@ table img {
 }
 td.imgTab {
   background: #fff;
+}
+
+.liked span {
+  display: flex;
+  width: 14px;
+  height: 14px;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+
+  border-radius: 50px;
+  border: 1px solid #fff;
+  background: #7fad39;
+
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-family: Open Sans;
+
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.likeWindow {
+  position: fixed;
+  transform: scale(0);
+  padding: 30px;
+  background: #fff;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.4s;
+}
+
+.likeWindow.active {
+  transform: scale(1);
+}
+
+.likeWindow.active .modalLike {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px 10px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.likeWindow.active .r-cards {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, calc(100% / 3 - 50px));
+}
+
+.likeWindow.active h1 {
+  font-family: Open Sans;
+  font-size: 30px;
+}
+
+.likeWindow.active > button {
+  top: 30px;
+  right: 100px;
+  transition: 0.3s;
+}
+
+.closeBtn.active:hover {
+  transform: scale(1.3);
+}
+
+.likeWindow.active .r-cards .r-card .product-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

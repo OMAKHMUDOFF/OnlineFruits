@@ -226,7 +226,7 @@ function App() {
           });
           break;
         } else {
-          toast.error("Can't go below one", {
+          toast.error("No less than one product!", {
             pauseOnHover: false,
           });
         }
@@ -260,27 +260,52 @@ function App() {
     }
   }
 
-  let [active, setActive] = useState(false);
+  let [activeWin, setActiveWin] = useState({
+    like: false,
+    cart: false,
+  });
 
-  function activeBtn() {
-    setActive(!active);
+  function cartActive() {
+    setActiveWin({ ...activeWin, cart: !activeWin.cart });
   }
-  function closeBtn() {
-    setActive(!active);
+  function likeActive() {
+    setActiveWin({ ...activeWin, like: !activeWin.like });
+  }
+
+  function closeCart() {
+    setActiveWin({ ...activeWin, cart: !activeWin.cart });
+  }
+  function closeLike() {
+    setActiveWin({ ...activeWin, like: !activeWin.like });
   }
 
   return (
     <>
-      <div className="container">
+      <div className="container" >
         <ToastContainer />
-        <Liked data={[...state.rec, ...state.top, ...state.added]} />
+        <Liked
+          data={[...state.rec, ...state.top, ...state.added]}
+          cartBtn={cartWin}
+          like={like}
+          switchBtns={switchBtns}
+          activeWin={activeWin.like}
+          closeLike={closeLike}
+        />
         <Cart
           cart={cart}
           setCart={setCart}
-          active={active}
-          closeTable={closeBtn}
+          activeWin={activeWin.cart}
+          closeCart={closeCart}
         />
-        <Nav cart={cart} activeBtn={activeBtn} />
+        <Nav
+          cart={cart}
+          activeBtn={cartActive}
+          inLiked={
+            [...state.rec, ...state.top, ...state.added].filter((e) => e.like)
+              .length
+          }
+          likeActive={likeActive}
+        />
         <Head />
         <Categor />
         <Rec

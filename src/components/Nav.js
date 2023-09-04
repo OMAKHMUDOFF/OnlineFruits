@@ -1,6 +1,6 @@
 import logo from "../img/logo/logo.png";
 
-export function Nav({ cart, activeBtn }) {
+export function Nav({ cart, activeBtn, inLiked, likeActive }) {
   return (
     <>
       <nav>
@@ -48,8 +48,9 @@ export function Nav({ cart, activeBtn }) {
                 <a href="tel: 1800000000">1800-000-000</a>
               </div>
               <span className="line"></span>
-              <div className="liked">
+              <div className="liked" onClick={likeActive}>
                 <i className="fa-regular fa-heart"></i>
+                <span>{inLiked}</span>
               </div>
               <span className="line"></span>
               <div className="user">

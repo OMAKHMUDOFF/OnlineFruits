@@ -1,4 +1,4 @@
-export function Cart({ cart, active, closeTable, setCart }) {
+export function Cart({ cart, activeWin, closeCart, setCart }) {
   function del(item) {
     setCart(
       cart.filter((e) => {
@@ -9,10 +9,10 @@ export function Cart({ cart, active, closeTable, setCart }) {
 
   return (
     <>
-      <div className={active ? "cart active" : "cart"}>
+      <div className={activeWin ? "cart active" : "cart"}>
         <button
-          onClick={closeTable}
-          className={active ? "closeBtn active" : "closeBtn"}
+          onClick={closeCart}
+          className={activeWin ? "closeBtn active" : "closeBtn"}
         >
           X
         </button>
@@ -49,7 +49,7 @@ export function Cart({ cart, active, closeTable, setCart }) {
                     </td>
                     <td>
                       <button className="delBtn" onClick={() => del(elem)}>
-                      <i class="fa-solid fa-trash-can"></i>
+                        <i class="fa-solid fa-trash-can"></i>
                       </button>
                     </td>
                   </tr>
