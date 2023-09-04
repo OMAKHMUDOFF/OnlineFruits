@@ -1,4 +1,12 @@
-export function Cart({ cart, active, closeTable }) {
+export function Cart({ cart, active, closeTable, setCart }) {
+  function del(item) {
+    setCart(
+      cart.filter((e) => {
+        return e.id !== item.id;
+      })
+    );
+  }
+
   return (
     <>
       <div className={active ? "cart active" : "cart"}>
@@ -26,19 +34,24 @@ export function Cart({ cart, active, closeTable }) {
                 return (
                   <tr key={elem.id}>
                     <th>{i + 1}</th>
-                    <th>
+                    <td>
                       <img src={elem?.img} alt="product img" />
-                    </th>
-                    <th>{elem?.title}</th>
-                    <th>{elem?.num}</th>
-                    <th>{elem?.price}</th>
-                    <th>{elem?.disc}</th>
-                    <th>
+                    </td>
+                    <td>{elem?.title}</td>
+                    <td>{elem?.num}</td>
+                    <td>{elem?.price}</td>
+                    <td>{elem?.disc}</td>
+                    <td>
                       {elem?.num *
                         parseInt(
                           elem?.price - (elem?.price / 100) * elem?.disc
                         )}
-                    </th>
+                    </td>
+                    <td>
+                      <button className="delBtn" onClick={() => del(elem)}>
+                      <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </td>
                   </tr>
                 );
               })

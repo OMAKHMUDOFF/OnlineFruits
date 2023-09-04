@@ -754,6 +754,7 @@ table {
 th,
 td {
   padding: 10px;
+  text-align: center;
 }
 
 table img {
@@ -768,17 +769,17 @@ table img {
   height: 0;
   background: #ffffff25;
   backdrop-filter: blur(10px);
-  display: none;
   transition: 0.4s;
   transform: scale(0);
+  top: -100%;
 }
 
 .cart.active {
   transform: scale(1);
   width: 100%;
   height: 100vh;
-  display: block;
   overflow-y: scroll;
+  top: 0;
 }
 
 .closeBtn.active {
@@ -795,4 +796,10 @@ table img {
 
 .closeBtn {
   display: none;
+}
+
+.delBtn {
+  background: none;
+  font-size: 20px;
+  color: red;
 }
