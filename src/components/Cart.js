@@ -26,6 +26,7 @@ export function Cart({ cart, activeWin, closeCart, setCart }) {
               <th>Price</th>
               <th>Discount</th>
               <th>Total price</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
