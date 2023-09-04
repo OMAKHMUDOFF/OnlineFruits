@@ -15,7 +15,8 @@ a {
 }
 
 button,
-input {
+input,
+select {
   border: none;
   outline: none;
 }
@@ -745,17 +746,30 @@ footer {
 
 table {
   font-family: Open Sans;
-  background: #ccccccd1;
+  background: #fff;
   width: 100%;
   margin: 0 auto;
   overflow-y: scroll;
-  border-collapse: collapse;
+  border: 2px solid;
+  box-shadow: 1px 0 3px 0px;
+
+  border-radius: 8px;
 }
 
 th,
 td {
+  border-bottom: 2px solid #ccc;
   padding: 10px;
   text-align: center;
+  text-transform: capitalize;
+}
+
+table td {
+  padding: 0px;
+}
+
+table td {
+  font-size: 17px;
 }
 
 table img {
@@ -768,7 +782,7 @@ table img {
   position: fixed;
   width: 0;
   height: 0;
-  background: #ffffff25;
+  background: #ffffffc9;
   backdrop-filter: blur(10px);
   transition: 0.4s;
   transform: scale(0);
@@ -785,14 +799,14 @@ table img {
 
 .closeBtn.active {
   position: absolute;
-  font-size: 30px;
-  top: 50px;
-  right: 50px;
+  font-size: 20px;
+  top: 70px;
+  right: 70px;
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   border-radius: 50px;
-  border: 1px solid;
+  background: none;
 }
 
 .closeBtn {

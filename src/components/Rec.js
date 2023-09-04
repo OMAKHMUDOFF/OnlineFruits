@@ -1,96 +1,4 @@
-import { useState } from "react";
-import apricot from "../img/rec/apricot.png";
-import cucumber from "../img/rec/cucumber.png";
-import nuts from "../img/rec/nuts.png";
-import brokoli from "../img/rec/brokoli.png";
-import quince from "../img/rec/quince.png";
-import { toast } from "react-toastify";
-
-export function Rec({ cartBtn }) {
-  function plus(obj) {
-    setState(
-      state.map((item) => {
-        return item.id === obj.id ? { ...item, num: item.num + 1 } : item;
-      })
-    );
-  }
-
-  function minus(obj) {
-    if (obj.num > 1) {
-      setState(
-        state.map((item, i) => {
-          return item.id === obj.id ? { ...item, num: item.num - 1 } : item;
-        })
-      );
-    } else {
-      // alert("Can't go below one");
-      toast("Cant go below one", {
-        position: "top-left",
-      });
-    }
-  }
-
-  function like(obj) {
-    setState(
-      state.map((like) => {
-        return like.id === obj.id ? { ...like, like: !like.like } : like;
-      })
-    );
-  }
-
-  let [state, setState] = useState([
-    {
-      id: 1,
-      disc: 15,
-      like: false,
-      img: apricot,
-      desc: "Available(in stock)",
-      title: "Fresh organic apricot",
-      price: 15,
-      num: 1,
-    },
-    {
-      id: 2,
-      disc: 15,
-      like: false,
-      img: cucumber,
-      desc: "Available(in stock)",
-      title: "Cucumber",
-      price: 15,
-      num: 1,
-    },
-    {
-      id: 3,
-      disc: 15,
-      like: false,
-      img: nuts,
-      desc: "Available(in stock)",
-      title: "Hazelnuts filbert nut",
-      price: 15,
-      num: 1,
-    },
-    {
-      id: 4,
-      disc: 15,
-      like: false,
-      img: brokoli,
-      desc: "Available(in stock)",
-      title: "raw broccoli",
-      price: 15,
-      num: 1,
-    },
-    {
-      id: 5,
-      disc: 15,
-      like: false,
-      img: quince,
-      desc: "Available(in stock)",
-      title: "Organic quince",
-      price: 15,
-      num: 1,
-    },
-  ]);
-
+export function Rec({ cartBtn, switchBtns, like, stateRec }) {
   return (
     <>
       <section id="Recomendation">
@@ -99,7 +7,7 @@ export function Rec({ cartBtn }) {
           <h1>Top featured products</h1>
         </div>
         <div className="r-cards">
-          {state.map((elem) => {
+          {stateRec.map((elem) => {
             return (
               <div className="r-card" key={elem.id}>
                 <div className="disc-like">
@@ -135,9 +43,13 @@ export function Rec({ cartBtn }) {
                 </div>
                 <div className="btns-cart">
                   <div className="r-btns">
-                    <button onClick={() => minus(elem)}>-</button>
+                    <button onClick={(e) => switchBtns(e, elem)} name="minus">
+                      -
+                    </button>
                     <div className="r-num">{elem.num}</div>
-                    <button onClick={() => plus(elem)}>+</button>
+                    <button onClick={(e) => switchBtns(e, elem)} name="plus">
+                      +
+                    </button>
                   </div>
                   <div className="r-cart">
                     <button onClick={() => cartBtn(elem)}>
