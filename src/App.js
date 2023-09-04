@@ -273,7 +273,7 @@ function App() {
     <>
       <div className="container">
         <ToastContainer />
-        <Liked data={[state.rec, state.top, state.added]} />
+        <Liked data={[...state.rec, ...state.top, ...state.added]} />
         <Cart
           cart={cart}
           setCart={setCart}

@@ -1,5 +1,6 @@
 export function Liked({ data }) {
   let likes = data.filter((liked) => liked.like === true);
+  console.log(data);
   return (
     <>
       <div className="likedWindow">
