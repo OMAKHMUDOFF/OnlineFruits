@@ -4,6 +4,7 @@ import cucumber from "../img/rec/cucumber.png";
 import nuts from "../img/rec/nuts.png";
 import brokoli from "../img/rec/brokoli.png";
 import quince from "../img/rec/quince.png";
+import { toast } from "react-toastify";
 
 export function Rec({ cartBtn }) {
   function plus(obj) {
@@ -22,7 +23,10 @@ export function Rec({ cartBtn }) {
         })
       );
     } else {
-      alert("Can't go below one");
+      // alert("Can't go below one");
+      toast("Cant go below one", {
+        position: "top-left",
+      });
     }
   }
 

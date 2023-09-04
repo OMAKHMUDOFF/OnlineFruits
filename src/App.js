@@ -9,6 +9,8 @@ import { Rec } from "./components/Rec";
 import { Top } from "./components/Top";
 import "./style/style.css";
 import { Cart } from "./components/Cart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import redapple from "./img/top/redapple.png";
 // import capsicum from "./img/top/capsicum.png";
@@ -80,7 +82,10 @@ function App() {
     if (cart.filter((item) => item.id === obj.id).length === 0) {
       setCart([...cart, obj]);
     } else {
-      alert("The product is already in the cart");
+      // alert("The product is already in the cart"); 
+      toast("The product is already in the cart", {
+        position: "top-left",
+      });
     }
   }
 
@@ -96,6 +101,7 @@ function App() {
   return (
     <>
       <div className="container">
+        <ToastContainer />
         <Cart
           cart={cart}
           setCart={setCart}
