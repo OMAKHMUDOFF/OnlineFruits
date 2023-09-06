@@ -780,7 +780,7 @@ table img {
   background: #ffffffc9;
   backdrop-filter: blur(10px);
   transition: 0.4s;
-  transform: translateX(-100%);
+  transform: translateX(-300%);
 }
 
 .cart.active {
@@ -845,7 +845,7 @@ td.imgTab {
 
 .likeWindow {
   position: fixed;
-  transform: translateX(100%);
+  transform: translateX(300%);
   padding: 30px;
   background: #fff;
   z-index: 99;
