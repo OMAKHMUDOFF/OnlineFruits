@@ -281,7 +281,7 @@ function App() {
 
   return (
     <>
-      <div className="container" >
+      <div className="container">
         <ToastContainer />
         <Liked
           data={[...state.rec, ...state.top, ...state.added]}

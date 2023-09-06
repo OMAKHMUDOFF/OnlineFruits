@@ -942,6 +942,7 @@ td.imgTab {
   gap: 30px;
   padding: 30px;
   border-radius: 10px;
+  text-transform: capitalize;
 }
 
 .cartCards .cartCard .cartBtns {
