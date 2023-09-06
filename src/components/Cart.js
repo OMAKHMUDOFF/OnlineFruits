@@ -91,6 +91,12 @@ export function Cart({ cart, activeWin, closeCart, setCart }) {
                           You save <span>{(el.disc / 100) * el.price}</span>$
                         </p>
                       </div>
+                      <div className="hMuch">
+                        <p>{el.num} Piece</p>-
+                        <h4>
+                          {el.num * (el.price - (el.disc / 100) * el.price)}$
+                        </h4>
+                      </div>
                     </div>
                     <div className="cartBtns">
                       <button onClick={() => del(el)}>

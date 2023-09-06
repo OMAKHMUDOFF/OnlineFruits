@@ -987,3 +987,17 @@ td.imgTab {
 .cartCards h1 {
   margin: 0 auto;
 }
+
+.hMuch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hMuch p {
+  font-weight: 600;
+}
+
+.hMuch h4 {
+  color: green;
+}
