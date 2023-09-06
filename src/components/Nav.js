@@ -39,7 +39,7 @@ export function Nav({ cart, activeBtn, inLiked, likeActive }) {
               </div>
               <div className="search">
                 <i className="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholde="Search for products..." />
+                <input type="text" placeholde="Search for products..." /> 
               </div>
             </div>
             <div className="rightMid">
@@ -50,7 +50,7 @@ export function Nav({ cart, activeBtn, inLiked, likeActive }) {
               <span className="line"></span>
               <div className="liked" onClick={likeActive}>
                 <i className="fa-regular fa-heart"></i>
-                <span>{inLiked}</span>
+                {inLiked > 0 ? <span>{inLiked}</span> : ""}
               </div>
               <span className="line"></span>
               <div className="user">
@@ -90,9 +90,7 @@ export function Nav({ cart, activeBtn, inLiked, likeActive }) {
             <div className="rightBot">
               <button className="inCart" onClick={activeBtn}>
                 <i className="fa-solid fa-cart-shopping"></i>
-                <p>
-                  Cart <span>{cart.length}</span>
-                </p>
+                <p>Cart {cart.length > 0 ? cart.length : ""}</p>
                 <i className="fa-solid fa-caret-down"></i>
               </button>
             </div>
