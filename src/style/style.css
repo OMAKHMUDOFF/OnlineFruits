@@ -983,3 +983,7 @@ td.imgTab {
   flex-direction: column;
   gap: 7px;
 }
+
+.cartCards h1 {
+  margin: 0 auto;
+}

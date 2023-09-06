@@ -101,7 +101,7 @@ export function Cart({ cart, activeWin, closeCart, setCart }) {
                 );
               })
             ) : (
-              <h1>cart is empty</h1>
+              <h1> Your cart is empty...</h1>
             )}
           </div>
         </div>
