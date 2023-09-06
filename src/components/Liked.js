@@ -14,7 +14,7 @@ export function Liked({
           onClick={closeLike}
           className={activeWin ? "closeBtn active" : "closeBtn"}
         >
-          X
+          Close
         </button>
 
         <div className="modalLike">
