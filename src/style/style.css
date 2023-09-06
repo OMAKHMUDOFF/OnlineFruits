@@ -957,7 +957,7 @@ td.imgTab {
 
 .cartCard .rightAbout .prodName h3 {
   font-size: 20px;
-  letter-spacing: 3px;
+  text-transform: capitalize;
 }
 
 .cartCard .rightAbout .price p {
